@@ -1,0 +1,16 @@
+# The public folder is the static folder plus some virtual files and folders.
+public = merge(static, this):
+  # Generate the index page from the index.ori template.
+  index.html = assets/index.ori():
+
+  # Generate the thumbnails by reducing the full-size images.
+  thumbnails = map(images, thumbnail):
+
+  # Generate a page in the team area for each team member.
+  team = map(teamByName, assets/person.ori, extension='->html'):
+
+# Define the title here so both page templates can use it.
+title: Our Amazing Team
+
+# Index the team members by name.
+teamByName = mapKeys(teamData.yaml, =name):
