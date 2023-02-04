@@ -2,21 +2,21 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{{ title }}</title>
+    <title>{{ ./title }}</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header>
       <img class="icon" src="personIcon.svg">
-      <h1>{{ title }}</h1>
+      <h1>{{ ./title }}</h1>
     </header>
     <ul class="tileGrid">
     {{ map(teamData.yaml, =`
       <li class="tile">
-        <a href="team/{{ name }}.html">
-          <img class="avatar" src="thumbnails/{{ image }}" alt="{{ name }}">
-          <h2 class="name">{{ name }}</h2>
-          <div class="location">{{ location }}</div>
+        <a href="team/{{ ./name }}.html">
+          <img class="avatar" src="thumbnails/{{ ./image }}" alt="{{ ./name }}">
+          <h2 class="name">{{ ./name }}</h2>
+          <div class="location">{{ ./location }}</div>
         </a>
       </li>
     `) }}
