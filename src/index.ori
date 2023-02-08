@@ -2,13 +2,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{{ ./title }}</title>
+    <title>{{ title }}</title>
     <link rel="stylesheet" href="assets/styles.css">
   </head>
   <body>
     <header>
       <img class="icon" src="assets/personIcon.svg">
-      <h1>{{ ./title }}</h1>
+      <h1>{{ title }}</h1>
     </header>
     <ul class="tileGrid">
     {{ map(teamData.yaml, =`
