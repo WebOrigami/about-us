@@ -6,10 +6,5 @@ public = {
   team = map(teamByName, person.ori, { extension: "->html" })
 }
 
-<<<<<<< HEAD
 teamByName = mapKeys(teamData.yaml, =name)
 title = "Our Amazing Team"
-=======
-title = 'Our Amazing Team'
-teamByName = mapKeys(teamData.yaml, =./name)
->>>>>>> 34dccec (Use new assignment shorthand)
