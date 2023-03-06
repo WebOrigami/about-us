@@ -1,10 +1,10 @@
 public = {
   index.html = index.ori()
+  team = map(teamByName, =person.ori(@value), { extension: "->html" })
   assets
   images
-  thumbnails = map(images, thumbnail)
-  team = map(teamByName, person.ori, { extension: "->html" })
+  thumbnails = map(images, =thumbnail(@value))
 }
 
-teamByName = mapKeys(teamData.yaml, =name)
 title = "Our Amazing Team"
+teamByName = mapKeys(teamData.yaml, =name)
