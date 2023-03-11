@@ -2,9 +2,10 @@ public = {
   index.html = index.ori()
   team = map(teamByName, =person.ori(@value), { extension: "->html" })
   assets
-  images
+  images = cache(gdrive/1si5SkHvot_ci1KrEIQ8MssrOtGbrOy_t, cached)
   thumbnails = map(images, =thumbnail(@value))
 }
 
 title = "Our Amazing Team"
-teamByName = mapKeys(teamData.yaml, =name)
+teamData = headerKeys(sheet())
+teamByName = mapKeys(teamData, =name)

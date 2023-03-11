@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "type": "module",
   "dependencies": {
-    "@graphorigami/origami": "github:GraphOrigami/origami#25bae2ff",
+    "@graphorigami/origami": "github:GraphOrigami/origami#22914b30",
+    "googleapis": "100.0.0",
     "sharp": "0.31.2"
   },
   "engines": {
@@ -14,7 +15,7 @@
     "projectType": "generated_static"
   },
   "scripts": {
-    "start": "ori @serve @watch src, =@debug site.graph/public",
-    "build": "ori @copy src/site.graph/public, files/build"
+    "start": "ori serve watch src, =debug site.graph/public",
+    "build": "ori copy src/site.graph/public, files/build"
   }
 }
