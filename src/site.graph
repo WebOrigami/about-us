@@ -7,5 +7,5 @@ public = {
 }
 
 title = "Our Amazing Team"
-teamData = headerKeys(sheet())
-teamByName = mapKeys(teamData, =name)
+teamData.yaml = headerKeys(sheet())
+teamByName = mapKeys(teamData.yaml, =name)
