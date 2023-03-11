@@ -2,10 +2,13 @@ public = {
   index.html = index.ori()
   team = map(teamByName, =person.ori(@value), { extension: "->html" })
   assets
-  images = cache(gdrive/1si5SkHvot_ci1KrEIQ8MssrOtGbrOy_t, cached)
+  images = drive/images
   thumbnails = map(images, =thumbnail(@value))
 }
 
 title = "Our Amazing Team"
-teamData.yaml = headerKeys(sheet())
 teamByName = mapKeys(teamData.yaml, =name)
+
+folderId = "1X3MWPXwwYXWarhNiCBIxCvGTyiBqISAF"
+drive = cache(gdrive(folderId), cached)
+teamData.yaml = headerKeys(parseJson(drive/Team))

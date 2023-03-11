@@ -1,11 +1,17 @@
-export default function headerKeys(table) {
+import { ExplorableGraph } from "@graphorigami/origami";
+
+export default async function headerKeys(variant) {
+  const graph = await ExplorableGraph.from(variant);
+  const table = await ExplorableGraph.plain(graph);
   const rows = table.slice();
   const header = rows.shift();
   const result = [];
   for (const row of rows) {
     const obj = {};
     for (let column = 0; column < header.length; column++) {
-      obj[header[column]] = row[column];
+      const key = String(header[column]);
+      const value = row[column];
+      obj[key] = value;
     }
     result.push(obj);
   }
