@@ -2,6 +2,7 @@ import { ExplorableGraph } from "@graphorigami/origami";
 import { google } from "googleapis";
 import path from "path";
 import { fileURLToPath } from "url";
+import gsheet from "./gsheet.js";
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 const keyFile = path.join(dirname, "credentials.json");
@@ -32,11 +33,13 @@ export default class GoogleDriveGraph {
       return undefined;
     }
 
-    return item.mimeType === "application/vnd.google-apps.folder"
-      ? // Subfolder
-        new GoogleDriveGraph(item.id)
-      : // File
-        getGoogleDriveFile(item.id);
+    const googleFileTypes = {
+      "application/vnd.google-apps.spreadsheet": gsheet,
+      "application/vnd.google-apps.folder": (id) => new GoogleDriveGraph(id),
+    };
+    const loader = googleFileTypes[item.mimeType] || getGoogleDriveFile;
+    const value = await loader(item.id);
+    return value;
   }
 
   async getItems() {
@@ -73,6 +76,8 @@ async function getGoogleDriveFile(fileId) {
   try {
     response = await driveService.files.get(params, options);
   } catch (e) {
+    const message = `Error ${e.code}  ${e.response.statusText} getting file ${fileId}: ${e.message}`;
+    console.error(message);
     return undefined;
   }
   let buffer = response.data;
