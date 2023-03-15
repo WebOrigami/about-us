@@ -9,13 +9,6 @@ export default class GoogleDriveGraph {
     this.itemsPromise = null;
   }
 
-  async *[Symbol.asyncIterator]() {
-    const items = await this.getItems();
-    for (const key of Object.keys(items)) {
-      yield key;
-    }
-  }
-
   async get(key) {
     const items = await this.getItems();
     const item = items[key];
@@ -54,6 +47,11 @@ export default class GoogleDriveGraph {
     });
 
     return this.itemsPromise;
+  }
+
+  async keys() {
+    const items = await this.getItems();
+    return Object.keys(items);
   }
 }
 
