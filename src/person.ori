@@ -13,10 +13,10 @@
       </header>
     </a>
     <main class="person">
-      <img class="avatar large" src="../images/{{ image }}" alt="{{ name }}" />
-      <h2 class="name">{{ name }}</h2>
-      <div class="location">{{ location }}</div>
-      <p class="bio">{{ bio }}</p>
+      <img class="avatar large" src="../images/{{ person/image }}" alt="{{ person/name }}" />
+      <h2 class="name">{{ person/name }}</h2>
+      <div class="location">{{ person/location }}</div>
+      <p class="bio">{{ person/bio }}</p>
     </main>
   </body>
 </html>
