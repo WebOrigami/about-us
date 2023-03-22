@@ -4,6 +4,7 @@ import {
   MapExtensionsGraph,
   MapInnerKeysGraph,
   MapValuesGraph,
+  ObjectGraph,
   OrigamiTemplate,
 } from "@graphorigami/origami";
 import path from "node:path";
@@ -33,10 +34,10 @@ const team = new MapExtensionsGraph(
   }
 );
 
-export default {
+export default new ObjectGraph({
   assets,
   images,
   "index.html": indexHtml,
   team,
   thumbnails,
-};
+});
