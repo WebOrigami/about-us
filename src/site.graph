@@ -10,5 +10,5 @@ title = "Our Amazing Team"
 teamByName = mapKeys(teamData.yaml, =name)
 
 folder = google(creds.json)/drive/1X3MWPXwwYXWarhNiCBIxCvGTyiBqISAF
-cached = cache(folder, gcache)
+cached = cacheSite(folder, gcache)
 teamData.yaml = headerKeys(parseJson(cached/Team))
