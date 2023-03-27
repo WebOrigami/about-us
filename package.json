@@ -14,7 +14,7 @@
     "projectType": "generated_static"
   },
   "scripts": {
-    "start": "ori @serve @watch src, =@debug site",
+    "start": "ori @serve @watch src, =@debug site/",
     "build": "ori @copy src/site, @files/build"
   }
 }
