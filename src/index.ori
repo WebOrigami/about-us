@@ -1,7 +1,27 @@
-=`<h1>About Us</h1>
-<ul>
-  {{ @map(_, =`
-    <li>{{ _/name }}</li>
-  `) }}
-</ul>
+=`<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>About Us</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <header>
+      <img class="icon" src="assets/personIcon.svg">
+      <h1>About Us</h1>
+    </header>
+    <ul class="tileGrid">
+    {{ @map(_, =`
+      <li class="tile">
+        <a href="team/{{ _/name }}.html">
+          <img class="avatar" src="thumbnails/{{ _/image }}" alt="{{ _/name }}">
+          <h2 class="name">{{ _/name }}</h2>
+          <div class="location">{{ _/location }}</div>
+        </a>
+      </li>
+    `) }}
+    </ul>
+  </body>
+</html>
 `

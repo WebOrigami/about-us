@@ -1,3 +1,10 @@
 {
-  index.html = "Hello"
+  index.html = index.ori(teamData.yaml)
+  team = @map(teamData.yaml, {
+    keyMap: =`{{ _/name }}.html`
+    valueMap: person.ori
+  })
+  assets
+  images
+  thumbnails = @map(images, thumbnail.js)
 }
