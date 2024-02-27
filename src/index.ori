@@ -1,4 +1,4 @@
-=`<!DOCTYPE html>
+(people) => `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -12,15 +12,15 @@
       <h1>About Us</h1>
     </header>
     <ul class="tileGrid">
-    {{ @map(_, =`
+    ${ @map(people, (person) => `
       <li class="tile">
-        <a href="team/{{ _/name }}.html">
-          <img class="avatar" src="thumbnails/{{ _/image }}" alt="{{ _/name }}">
-          <h2 class="name">{{ _/name }}</h2>
-          <div class="location">{{ _/location }}</div>
+        <a href="team/${ person/name }.html">
+          <img class="avatar" src="thumbnails/${ person/image }" alt="${ person/name }">
+          <h2 class="name">${ person/name }</h2>
+          <div class="location">${ person/location }</div>
         </a>
       </li>
-    `) }}
+    `) }
     </ul>
   </body>
 </html>

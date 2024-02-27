@@ -1,1 +1,1 @@
-=`<p>Hello, <strong>{{ _ }}</strong>!</p>`
+(name) => `<p>Hello, <strong>${ name }</strong>!</p>`

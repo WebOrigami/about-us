@@ -1,9 +1,9 @@
-=`<!DOCTYPE html>
+(person) => `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{{ _/name }}</title>
+    <title>${ person/name }</title>
     <link rel="stylesheet" href="../assets/styles.css">
   </head>
   <body>
@@ -14,10 +14,10 @@
       </header>
     </a>
     <main class="person">
-      <img class="avatar large" src="../images/{{ _/image }}" alt="{{ _/name }}" />
-      <h2 class="name">{{ _/name }}</h2>
-      <div class="location">{{ _/location }}</div>
-      <p class="bio">{{ _/bio }}</p>
+      <img class="avatar large" src="../images/${ person/image }" alt="${ person/name }" />
+      <h2 class="name">${ person/name }</h2>
+      <div class="location">${ person/location }</div>
+      <p class="bio">${ person/bio }</p>
     </main>
   </body>
 </html>
