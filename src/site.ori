@@ -1,10 +1,10 @@
 {
   index.html = index.ori(teamData.yaml)
-  team = @map(teamData.yaml, {
-    keyMap: (person) => `${ person/name }.html`
-    valueMap: person.ori
-  })
   assets
   images
-  thumbnails = @map(images, thumbnail.js)
+  thumbnails = @map(images, @image/resize({ width: 200 }))
+  team = @map(teamData.yaml, {
+    key: (person) => `${person/name}.html`
+    value: person.ori
+  })
 }
