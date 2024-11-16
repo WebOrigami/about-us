@@ -1,15 +1,2 @@
 node_modules
-
-# Normally you'd want to uncomment the line below, and add the build folder
-# to the list of things that are *not* stored as part of this project. That
-# saves storage space, which eventually saves money. Since the build can be
-# reconstructed at any time, it's not necesary to save it.
-#
-# That said, for this demo project, it's helpful to see the build folder in
-# the code editor -- but Glitch won't let you see the build folder if it's
-# listed in this .gitignore file. So this demo project saves the build
-# folder as part of the project so that you can easily see it. For a real
-# project of your own, uncomment the line below by removing the initial `#`
-# sign.
-
-#build
+build
