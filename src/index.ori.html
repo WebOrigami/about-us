@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About Us</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header>
+      <img class="icon" src="assets/personIcon.svg" />
+      <h1>About Us</h1>
+    </header>
+    <ul class="tileGrid">
+      ${ Tree.map(_, (person) => Tree.indent`
+      <li class="tile">
+        <a href="team/${ person.name }.html">
+          <img
+            class="avatar"
+            src="images/${ person.filename }"
+            alt="${ person.name }"
+          />
+          <h2 class="name">${ person.name }</h2>
+          <div class="location">${ person.location }</div>
+        </a>
+      </li>
+      `) }
+    </ul>
+  </body>
+</html>

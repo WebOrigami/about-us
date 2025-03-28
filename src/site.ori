@@ -1,3 +1,15 @@
 {
-  index.html = "Hello"
+  assets
+
+  (data): airtable.ori/
+
+  // Create virtual image files that retrieve the corresponding URL
+  images = Tree.map(data, {
+    key: (person) => person.filename,
+    value: (person) => fetch(person.url)
+  })
+
+  index.html = index.ori.html(data)
+
+  team = Tree.map(data, person.ori.html)
 }

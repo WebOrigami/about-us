@@ -1,8 +1,0 @@
-(people) => Tree.indent`
-  <h1>About Us</h1>
-  <ul>
-    ${ Tree.map(people, (person) => Tree.indent`
-      <li>${ person.name }</li>
-    `) }
-  </ul>
-`

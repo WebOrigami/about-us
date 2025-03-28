@@ -1,3 +1,0 @@
-(person) => Tree.indent`
-  <h1>${ person.name }</h1>
-`
