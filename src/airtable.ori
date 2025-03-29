@@ -2,16 +2,16 @@
 airtable.js(token)/appZ0s0nNFAG9Aax0/People
 
 // Use names as keys, and pull out just the fields we care about
-→ (data) => Tree.map(data.records, {
-  key: (record) => record.fields.Name,
-  value: (record) => ({
-    name: record.fields.Name,
-    location: record.fields.Location,
-    bio: record.fields.Bio,
-    filename: record.fields.Image[0].filename,
-    url: record.fields.Image[0].url
-  })
+→ (data) => map(data/records, {
+  key: =_/fields/Name
+  value: ={
+    name: _/fields/Name
+    location: _/fields/Location
+    bio: _/fields/Bio
+    filename: _/fields/Image/0/filename
+    url: _/fields/Image/0/url
+  }
 })
 
 // Sort by name
-→ (records) => Tree.sort(records, (record) => record.name)
+→ =sort(_, =_/name)

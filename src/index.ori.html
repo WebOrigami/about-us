@@ -12,16 +12,16 @@
       <h1>About Us</h1>
     </header>
     <ul class="tileGrid">
-      ${ Tree.map(_, (person) => Tree.indent`
+      ${ map(_, (person) => indent`
       <li class="tile">
-        <a href="team/${ person.name }.html">
+        <a href="team/${ person/name }.html">
           <img
             class="avatar"
-            src="images/${ person.filename }"
-            alt="${ person.name }"
+            src="images/${ person/filename }"
+            alt="${ person/name }"
           />
-          <h2 class="name">${ person.name }</h2>
-          <div class="location">${ person.location }</div>
+          <h2 class="name">${ person/name }</h2>
+          <div class="location">${ person/location }</div>
         </a>
       </li>
       `) }
