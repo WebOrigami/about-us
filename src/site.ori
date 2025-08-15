@@ -4,9 +4,12 @@
   (data): airtable.ori/
 
   // Create virtual image files that retrieve the corresponding URL
-  images = map(data, { key: =_/filename, value: =fetch(_/url) })
+  images = Tree.map(data, {
+    key: (person) => person.filename,
+    value: (person) => fetch(person.url)
+  })
 
   index.html = index.ori.html(data)
 
-  team = map(data, person.ori.html)
+  team = Tree.map(data, person.ori.html)
 }
