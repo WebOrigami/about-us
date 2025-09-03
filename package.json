@@ -4,7 +4,7 @@
   "type": "module",
   "dependencies": {
     "@weborigami/origami": "0.5.2",
-    "sharp": "0.33.5"
+    "sharp": "0.34.3"
   },
   "license": "MIT",
   "scripts": {
