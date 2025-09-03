@@ -1,10 +1,17 @@
 {
-  index.html = index.ori(teamData.yaml)
+  // Static assets
   assets
   images
+
+  // The home page shows a list of all team members
+  index.html = index.ori(teamData.yaml)
+
+  // Generated thumbnails for all avatar images
   thumbnails = map(images, thumbnail.js)
+
+  // The team area contains a page for each team member
   team = map(teamData.yaml, {
-    key: (person) => `${person/name}.html`
+    key: (person) => `${ person.name }.html`
     value: person.ori
   })
 }
