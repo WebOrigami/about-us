@@ -7,10 +7,10 @@
   index.html = index.ori(teamData.yaml)
 
   // Generated thumbnails for all avatar images
-  thumbnails = map(images, thumbnail.js)
+  thumbnails = Tree.map(images, thumbnail.js)
 
   // The team area contains a page for each team member
-  team = map(teamData.yaml, {
+  team = Tree.map(teamData.yaml, {
     key: (person) => `${ person.name }.html`
     value: person.ori
   })
